@@ -1,7 +1,7 @@
 import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http'
 import { NgModule } from '@angular/core'
-import { AngularFireModule } from '@angular/fire'
-import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth'
+// { AngularFireModule } from '@angular/fire'
+//import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth'
 import { FlexLayoutModule } from '@angular/flex-layout'
 import { ReactiveFormsModule } from '@angular/forms'
 import { BrowserModule } from '@angular/platform-browser'
@@ -16,9 +16,9 @@ import { environment } from '../environments/environment'
 import { AppMaterialModule } from './app-material.module'
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
-import { AuthHttpInterceptor } from './auth/auth-http-interceptor'
-import { authFactory } from './auth/auth.factory'
-import { AuthService } from './auth/auth.service'
+//import { AuthHttpInterceptor } from './auth/auth-http-interceptor'
+//import { authFactory } from './auth/auth.factory'
+//import { AuthService } from './auth/auth.service'
 import { SimpleDialogComponent } from './common/simple-dialog.component'
 import { entityConfig } from './entity-metadata'
 import { HomeComponent } from './home/home.component'
@@ -50,13 +50,21 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {
     FlexLayoutModule,
     FieldErrorModule,
     NgxMaskModule.forRoot(options),
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule,
+    //AngularFireModule.initializeApp(environment.firebase),
+    //AngularFireAuthModule,
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
     EntityDataModule.forRoot(entityConfig),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
   ],
+
+  providers: [],
+
+
+
+
+
+    /*
   providers: [
     {
       provide: AuthService,
@@ -68,7 +76,7 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {
       useClass: AuthHttpInterceptor,
       multi: true,
     },
-  ],
+  ],*/
   bootstrap: [AppComponent],
   entryComponents: [SimpleDialogComponent],
 })
