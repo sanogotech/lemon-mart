@@ -6,7 +6,7 @@ import { combineLatest } from 'rxjs'
 import { tap } from 'rxjs/operators'
 import { SubSink } from 'subsink'
 
-import { AuthService } from './auth/auth.service'
+//import { AuthService } from './auth/auth.service'
 
 @Component({
   selector: 'app-root',
@@ -46,6 +46,36 @@ import { AuthService } from './auth/auth.service'
   ],
   // prettier-ignore
   template: `
+
+   <div class="app-container">
+      <mat-toolbar color="primary" fxLayoutGap="8px" class="app-toolbar">
+        <button  mat-icon-button >
+          <mat-icon>menu</mat-icon>
+        </button>
+        <a mat-icon-button routerLink="/home">
+          <mat-icon svgIcon="lemon"></mat-icon>
+          <span class="mat-h2">LemonMart</span>
+        </a>
+        <span class="flex-spacer"></span>
+        <button mat-mini-fab routerLink="/user/profile" matTooltip="Profile"
+          aria-label="User Profile">
+          <mat-icon>account_circle</mat-icon>
+        </button>
+        <button  mat-mini-fab routerLink="/user/logout" matTooltip="Logout"
+          aria-label="Logout">
+          <mat-icon>lock_open</mat-icon>
+        </button>
+      </mat-toolbar>
+      <mat-sidenav-container class="app-sidenav-container">
+        <mat-sidenav>
+          <app-navigation-menu></app-navigation-menu>
+        </mat-sidenav>
+        <mat-sidenav-content>
+          <router-outlet></router-outlet>
+        </mat-sidenav-content>
+      </mat-sidenav-container>
+    </div>
+   <!--
     <div class="app-container">
       <mat-toolbar color="primary" fxLayoutGap="8px" class="app-toolbar" [class.app-is-mobile]="media.isActive('xs')"
         *ngIf="{
@@ -80,6 +110,7 @@ import { AuthService } from './auth/auth.service'
         </mat-sidenav-content>
       </mat-sidenav-container>
     </div>
+      -->
   `,
 })
 export class AppComponent implements OnInit, OnDestroy {
@@ -89,8 +120,8 @@ export class AppComponent implements OnInit, OnDestroy {
   constructor(
     iconRegistry: MatIconRegistry,
     sanitizer: DomSanitizer,
-    public authService: AuthService,
-    public media: MediaObserver
+   // public authService: AuthService,
+    //public media: MediaObserver
   ) {
     iconRegistry.addSvgIcon(
       'lemon',
@@ -99,6 +130,7 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    /*
     this.subs.sink = combineLatest([
       this.media.asObservable(),
       this.authService.authStatus$,
@@ -117,9 +149,10 @@ export class AppComponent implements OnInit, OnDestroy {
         })
       )
       .subscribe()
+      */
   }
 
   ngOnDestroy() {
-    this.subs.unsubscribe()
+    //this.subs.unsubscribe()
   }
 }

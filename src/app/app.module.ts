@@ -58,6 +58,7 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
   ],
 
+
   providers: [],
 
 

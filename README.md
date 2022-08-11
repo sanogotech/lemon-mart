@@ -80,6 +80,17 @@ Executing `npx ng build --configuration=firebase` leverages `Firebase` authentic
 
 Executing `npx ng build --configuration=lemon-mart-server` leverages `Custom` authentication. Note that this is implemented by the example projects Lemon Mart Server, which is detailed below.
 
+## Command
+
+
+```
+ng generate component ./manager/dialog-box  --module manager
+
+```
+
+## Docs
+- https://www.freakyjolly.com/angular-material-table-operations-using-dialog/
+
 ### Lemon Mart Server
 
 Lemon Mart Server is an easy to learn and use TypeScript Node.js server using [Minimal MEAN](https://github.com/duluca/minimal-mean) for [Lemon Mart](https://github.com/duluca/lemon-mart).
