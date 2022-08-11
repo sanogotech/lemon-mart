@@ -84,7 +84,10 @@ Executing `npx ng build --configuration=lemon-mart-server` leverages `Custom` au
 
 
 ```
+npm install --save firebase
+
 ng generate component ./manager/dialog-box  --module manager
+
 
 ```
 

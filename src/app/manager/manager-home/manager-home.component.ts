@@ -22,11 +22,10 @@ const ELEMENT_DATA: UsersData[] = [
   selector: 'app-manager-home',
   styles: [],
   template: `
-    <p>
-      <img
-        src="https://user-images.githubusercontent.com/822159/36186559-c2ee9c4a-110d-11e8-80a6-933943a1336f.png"
-      />
-    </p>
+
+<br>
+<br>
+<br>
 
     <!-- app.component.html -->
 <div class="container text-center">
@@ -55,17 +54,13 @@ const ELEMENT_DATA: UsersData[] = [
   <ng-container matColumnDef="action">
     <th mat-header-cell *matHeaderCellDef> Action </th>
     <td mat-cell *matCellDef="let element" class="action-link">
-      <!--<a (click)="openDialog('Update',element)">Edit</a> |
-      <a (click)="openDialog('Delete',element)">Delete</a> -->
-
-      <a >Edit</a> |
-      <a>Delete</a>
+      <a (click)="openDialog('Update',element)">Edit</a> |
+      <a (click)="openDialog('Delete',element)">Delete</a>
     </td>
   </ng-container>
 
   <tr mat-header-row ></tr>
   <tr mat-row ></tr>
-
  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
@@ -73,6 +68,11 @@ const ELEMENT_DATA: UsersData[] = [
 
 </div>
 
+<p>
+      <img
+        src="https://user-images.githubusercontent.com/822159/36186559-c2ee9c4a-110d-11e8-80a6-933943a1336f.png"
+      />
+</p>
   `,
 })
 
@@ -128,7 +128,6 @@ export class ManagerHomeComponent implements OnInit {
     });
   }
 
- // constructor() {}
 
   ngOnInit() {}
 }
